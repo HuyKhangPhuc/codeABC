@@ -34,7 +34,7 @@
     <header class="header_section">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="index.php">
             <span>
               LDH Muscle
             </span>
@@ -47,17 +47,17 @@
             <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav  ">
                 <li class="nav-item ">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item ">
-                  <a class="nav-link" href="why.html"> Why us </a>
+                  <a class="nav-link" href="why.php"> Why us </a>
                 </li>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="trainer.html"> trainers</a>
+                  <a class="nav-link" href="trainer.php"> trainers</a>
                 </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="contact.html"> Contact Us</a>
+                  <a class="nav-link" href="contact.php"> Contact Us</a>
                 </li>
               </ul>
               <div class="user_option">
