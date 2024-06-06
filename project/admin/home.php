@@ -375,7 +375,7 @@
                 Enjoy the BEST SAVINGS ON NEW ARRIVALS! Shop now for incredible discounts on the latest trends and top-quality products. Don’t miss out—save on your favorite new items today!
               </p>
               <div class="btn-box">
-                <a href="#" class="btn1">
+                <a href="index.php?act=muangay" class="btn1">
                   Buy Now
                 </a>
                 <a href="#" class="btn2">
@@ -668,7 +668,7 @@
                 Find the perfect GIFTS FOR YOUR LOVED ONES! Explore our collection of thoughtful and unique presents that will delight and surprise those you care about. Shop now to make every occasion special
               </p>
               <div class="btn-box">
-                <a href="#" class="btn1">
+                <a href="index.php?act=muangay" class="btn1">
                   Buy Now
                 </a>
                 <a href="#" class="btn2">
