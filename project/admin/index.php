@@ -26,6 +26,12 @@ include "header.php";
                 case'muahang':
                     include "sanpham/shop.php";
                     break;
+                    case'muangay':
+                    include "sanpham/shop.php";
+                    break;
+                case'location':
+                    include "lienhe/contact.php";
+                    break;
                 default:
                    include "home.php";
                     break;
