@@ -2,13 +2,17 @@
 function getYear() {
     var currentDate = new Date();
     var currentYear = currentDate.getFullYear();
-    document.querySelector("#displayYear").innerHTML = currentYear;
+    var yearElement = document.querySelector("#displayYear");
+    if (yearElement) {
+        yearElement.innerHTML = currentYear; // Sửa innerPHP thành innerHTML
+    } else {
+        console.error('Element with ID "displayYear" not found.');
+    }
 }
 
 getYear();
 
 // owl carousel 
-
 $('.owl-carousel').owlCarousel({
     loop: true,
     margin: 10,
@@ -26,4 +30,4 @@ $('.owl-carousel').owlCarousel({
             items: 6
         }
     }
-})
+});
