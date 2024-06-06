@@ -245,6 +245,106 @@
             </a>
           </div>
         </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="box">
+            <a href="">
+              <div class="img-box">
+                <img src="img/roid.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h6>
+                  Hyperbolic
+                </h6>
+                <h6>
+                  Price
+                  <span>
+                    $2000
+                  </span>
+                </h6>
+              </div>
+              <div class="new">
+                <span>
+                  New
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="box">
+            <a href="">
+              <div class="img-box">
+                <img src="img/whey.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h6>
+                  Real Whey
+                </h6>
+                <h6>
+                  Price
+                  <span>
+                    $500
+                  </span>
+                </h6>
+              </div>
+              <div class="new">
+                <span>
+                  New
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="box">
+            <a href="">
+              <div class="img-box">
+                <img src="img/creatine.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h6>
+                  Creatine
+                </h6>
+                <h6>
+                  Price
+                  <span>
+                    $200
+                  </span>
+                </h6>
+              </div>
+              <div class="new">
+                <span>
+                  New
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="box">
+            <a href="">
+              <div class="img-box">
+                <img src="img/kim.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h6>
+                  Injection
+                </h6>
+                <h6>
+                  Price
+                  <span>
+                    $50
+                  </span>
+                </h6>
+              </div>
+              <div class="new">
+                <span>
+                  New
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
         
       </div>
       <div class="btn-box">
@@ -254,6 +354,7 @@
       </div>
     </div>
   </section>
+  
 
   <!-- end shop section -->
 
