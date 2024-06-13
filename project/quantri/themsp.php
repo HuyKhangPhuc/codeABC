@@ -1,116 +1,122 @@
 <?php
-include_once('ketnoi.php'); // Kết nối CSDL
+include_once('ketnoi.php'); // Connect to Database
 
 $error = NULL;
-if(isset($_POST['submit'])){
-    // Kiểm tra và xử lý lỗi cho các trường bắt buộc
+if (isset($_POST['submit'])) {
+    // Initialize an array to hold errors
     $errors = array();
 
-    // Tên Sản phẩm
-    if(empty($_POST['ten_sp'])){
+    // Product Name
+    if (empty($_POST['ten_sp'])) {
         $errors['ten_sp'] = '<span style="color:red;">(*)</span>';
-    }
-    else{
-        $ten_sp = $_POST['ten_sp'];
+    } else {
+        $ten_sp = mysqli_real_escape_string($conn, $_POST['ten_sp']);
     }
 
-    // Giá Sản phẩm
-    if(empty($_POST['gia_sp'])){
+    // Product Price
+    if (empty($_POST['gia_sp'])) {
         $errors['gia_sp'] = '<span style="color:red;">(*)</span>';
-    }
-    else{
-        $gia_sp = $_POST['gia_sp'];
+    } else {
+        $gia_sp = mysqli_real_escape_string($conn, $_POST['gia_sp']);
     }
 
-    // Trạng thái
-    if(empty($_POST['trang_thai'])){
+    // Product Status
+    if (empty($_POST['trang_thai'])) {
         $errors['trang_thai'] = '<span style="color:red;">(*)</span>';
-    }
-    else{
-        $trang_thai = $_POST['trang_thai'];
+    } else {
+        $trang_thai = mysqli_real_escape_string($conn, $_POST['trang_thai']);
     }
 
-    // Chi tiết Sản phẩm
-    if(empty($_POST['chi_tiet_sp'])){
+    // Product Details
+    if (empty($_POST['chi_tiet_sp'])) {
         $errors['chi_tiet_sp'] = '<span style="color:red;">(*)</span>';
-    }
-    else{
-        $chi_tiet_sp = $_POST['chi_tiet_sp'];
+    } else {
+        $chi_tiet_sp = mysqli_real_escape_string($conn, $_POST['chi_tiet_sp']);
     }
 
-    // Ảnh mô tả Sản phẩm
-    if(empty($_FILES['anh_sp']['name'])){
+    // Product Image
+    if (empty($_FILES['anh_sp']['name'])) {
         $errors['anh_sp'] = '<span style="color:red;">(*)</span>';
-    }
-    else{
-        $anh_sp = $_FILES['anh_sp']['name'];
+    } else {
+        $anh_sp = basename($_FILES['anh_sp']['name']);
         $tmp = $_FILES['anh_sp']['tmp_name'];
+        $upload_dir = 'anh/' . $anh_sp;
+
+        if (!move_uploaded_file($tmp, $upload_dir)) {
+            $errors['anh_sp'] = '<span style="color:red;">Failed to upload image.</span>';
+        }
     }
 
-    // Danh mục Sản phẩm
-    if($_POST['id_dm'] == 'unselect'){
+    // Product Category
+    if (!isset($_POST['id_dm']) || $_POST['id_dm'] == 'unselect') {
         $errors['id_dm'] = '<span style="color:red;">(*)</span>';
-    }
-    else{
-        $id_dm = $_POST['id_dm'];
+    } else {
+        $id_dm = mysqli_real_escape_string($conn, $_POST['id_dm']);
     }
 
-    // Nếu không có lỗi, thực hiện insert dữ liệu
-    if(empty($errors)){
-        // Upload ảnh sản phẩm
-        move_uploaded_file($tmp, 'anh/'.$anh_sp);
-
-        // Chuẩn bị câu truy vấn insert
+    // If no errors, proceed to insert data
+    if (empty($errors)) {
+        // Prepare insert query
         $sql = "INSERT INTO sanpham (ten_sp, gia_sp, tinh_trang, trang_thai, chi_tiet_sp, anh_sp, id_dm) 
-                VALUES ('$ten_sp', '$gia_sp', '$tinh_trang', '$trang_thai', '$chi_tiet_sp', '$anh_sp', '$id_dm')";
+                VALUES ('$ten_sp', '$gia_sp', 'Còn hàng', '$trang_thai', '$chi_tiet_sp', '$anh_sp', '$id_dm')";
 
-        // Thực thi truy vấn
-        $query = mysqli_query($conn, $sql);
-
-        // Kiểm tra và xử lý kết quả
-        if($query){
-            header('location:quantri.php?page_layout=danhsachsp');
+        // Execute query
+        if (mysqli_query($conn, $sql)) {
+            header('Location: quantri.php?page_layout=danhsachsp');
             exit;
         } else {
             $error = "Có lỗi xảy ra trong quá trình thêm sản phẩm.";
         }
     }
 }
-
 ?>
 
+
 <link rel="stylesheet" type="text/css" href="css/themsp.css" />
-<h2>thêm mới sản phẩm</h2>
+<h2>Thêm sản phẩm mới</h2>
 <div id="main">
     <form method="post" enctype="multipart/form-data">
         <table id="add-prd" border="0" cellpadding="0" cellspacing="0">
             <tr>
-                <td><label>Tên sản phẩm</label><br /><input type="text" name="ten_sp" /><?php if(isset($errors['ten_sp'])){ echo $errors['ten_sp']; } ?></td>
-            </tr>
-            <tr>
-                <td><label>Ảnh mô tả</label><br /><input type="file" name="anh_sp" /><?php if(isset($errors['anh_sp'])){ echo $errors['anh_sp']; } ?></td>
-            </tr>
-            <tr>
-                <select name="id_dm">
-                        <option value="1">iPhone</option>
-                        <option value="2">Samsung</option>
-                        <option value="3">Sony Ericson</option>
-                        <option value="4">LG</option>
-                        <option value="5">HTC</option>
-                        <option value="6">Nokia</option>
-                        <option value="7">Blackberry</option>
-                        <option value="8">Asus</option>
-                        <option value="9">Lenovo</option>
-                        <option value="10">Motorola</option>
-                        <option value="11">Mobiado</option>
-                        <option value="12">Vertu</option>
-                        <option value="13">QMobile</option>
-                    </select><?php if(isset($errors['id_dm'])){ echo $errors['id_dm']; } ?>
+                <td><label>Tên sản phẩm</label><br />
+                    <input type="text" name="ten_sp" /><?php if (isset($errors['ten_sp'])) { echo $errors['ten_sp']; } ?>
                 </td>
             </tr>
             <tr>
-                <td><label>Giá sản phẩm</label><br /><input type="text" name="gia_sp" /> VNĐ <?php if(isset($errors['gia_sp'])){ echo $errors['gia_sp']; } ?></td>
+                <td><label>Ảnh mô tả</label><br />
+                    <input type="file" name="anh_sp" /><?php if (isset($errors['anh_sp'])) { echo $errors['anh_sp']; } ?>
+                </td>
             </tr>
             <tr>
-                <td><label>Còn hàng</label><br /><input type="text" name="trang_thai" value="Còn hàng" /><?php if(isset($errors['trang_thai'])){ echo $errors['trang_thai']; } ?></td>
+                <td><label>Giá sản phẩm</label><br />
+                    <input type="text" name="gia_sp" /> VNĐ <?php if (isset($errors['gia_sp'])) { echo $errors['gia_sp']; } ?>
+                </td>
             </tr>
+            <tr>
+                <td><label>Còn hàng</label><br />
+                    <input type="text" name="trang_thai" value="Còn hàng" /><?php if (isset($errors['trang_thai'])) { echo $errors['trang_thai']; } ?>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Chi tiết sản phẩm</label><br />
+                    <textarea name="chi_tiet_sp"></textarea><?php if (isset($errors['chi_tiet_sp'])) { echo $errors['chi_tiet_sp']; } ?>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Danh mục sản phẩm</label><br />
+                    <select name="id_dm">
+                        <option value="unselect">Chọn danh mục</option>
+                        <!-- Add your categories here -->
+                        <option value="1">Category 1</option>
+                        <option value="2">Category 2</option>
+                    </select>
+                    <?php if (isset($errors['id_dm'])) { echo $errors['id_dm']; } ?>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="submit" value="Thêm mới" /></td>
+            </tr>
+        </table>
+    </form>
+    <?php if ($error) { echo '<p style="color:red;">' . $error . '</p>'; } ?>
+</div>
