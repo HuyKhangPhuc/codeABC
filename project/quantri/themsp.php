@@ -91,24 +91,6 @@ if(isset($_POST['submit'])){
                 <td><label>Ảnh mô tả</label><br /><input type="file" name="anh_sp" /><?php if(isset($errors['anh_sp'])){ echo $errors['anh_sp']; } ?></td>
             </tr>
             <tr>
-                <select name="id_dm">
-                        <option value="1">iPhone</option>
-                        <option value="2">Samsung</option>
-                        <option value="3">Sony Ericson</option>
-                        <option value="4">LG</option>
-                        <option value="5">HTC</option>
-                        <option value="6">Nokia</option>
-                        <option value="7">Blackberry</option>
-                        <option value="8">Asus</option>
-                        <option value="9">Lenovo</option>
-                        <option value="10">Motorola</option>
-                        <option value="11">Mobiado</option>
-                        <option value="12">Vertu</option>
-                        <option value="13">QMobile</option>
-                    </select><?php if(isset($errors['id_dm'])){ echo $errors['id_dm']; } ?>
-                </td>
-            </tr>
-            <tr>
                 <td><label>Giá sản phẩm</label><br /><input type="text" name="gia_sp" /> VNĐ <?php if(isset($errors['gia_sp'])){ echo $errors['gia_sp']; } ?></td>
             </tr>
             <tr>
