@@ -16,7 +16,7 @@
 </head>
 <body>
 
-<!-- header section strats -->
+<!-- header section starts -->
 <header class="header_section">
     <nav class="navbar navbar-expand-lg custom_nav-container">
         <a class="navbar-brand" href="index.php">
@@ -47,7 +47,7 @@
             <div class="user_option">
                 <?php if(isset($_SESSION['username'])): ?>
                     <div class="dropdown">
-                        <button style="background-color: transparent;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button style="background-color: transparent; color:black;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <?php echo htmlspecialchars($_SESSION['username']); ?>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -62,9 +62,9 @@
                         <span>Login</span>
                     </a>
                 <?php endif; ?>
-                <a href="">
+                <a href="cart.php">
                     <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-                    <span id="cartItemCount">0</span>
+                    <span id="cartItemCount"><?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0; ?></span>
                 </a>
                 <form class="form-inline">
                     <button class="btn nav_search-btn" type="submit">
@@ -76,24 +76,22 @@
     </nav>
 </header>
 
+<!-- Include modal -->
+<?php
+    $modalPath = realpath(__DIR__ . '/../sanpham/modal.php');
+    if ($modalPath) {
+        include $modalPath;
+    } else {
+         realpath(__DIR__ . '/../sanpham/modal.php');
+    }
+?>
+
+<!-- Trong phần cuối của trang HTML -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="js/cart.js"></script>
 <script src="js/custom.js"></script>
-<script>
-    // JavaScript để cập nhật số lượng sản phẩm trên icon giỏ hàng
-    function updateCartItemCount() {
-        var cartItemCount = <?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0; ?>;
-        var cartItemCountElement = document.getElementById('cartItemCount');
-        if (cartItemCountElement) {
-            cartItemCountElement.textContent = cartItemCount;
-        }
-    }
 
-    // Gọi hàm updateCartItemCount() khi trang được tải
-    document.addEventListener('DOMContentLoaded', function() {
-        updateCartItemCount();
-    });
-</script>
 </body>
 </html>
