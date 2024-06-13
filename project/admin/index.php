@@ -32,6 +32,9 @@ include "header.php";
                 case'location':
                     include "lienhe/contact.php";
                     break;
+                case 'dangky':
+                    include "Taikhoan/index2.php";
+                    break;
                 default:
                    include "home.php";
                     break;
@@ -42,6 +45,9 @@ include "header.php";
         }
        ?>
         <?php include "footer.php";?>
+        
+
     </div>
+    
 </body>
 </html>

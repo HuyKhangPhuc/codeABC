@@ -66,7 +66,7 @@
             </li>
           </ul>
           <div class="user_option">
-            <a href="">
+            <a href="index.php?act=dangky">
               <i class="fa fa-user" aria-hidden="true"></i>
               <span>
                 Login
@@ -74,6 +74,8 @@
             </a>
             <a href="">
               <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+              <span id="cartItemCount">0</span>
+
             </a>
             <form class="form-inline ">
               <button class="btn nav_search-btn" type="submit">
@@ -89,3 +91,17 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
   </script>
   <script src="js/custom.js"></script>
+  <script>// JavaScript để cập nhật số lượng sản phẩm trên icon giỏ hàng
+function updateCartItemCount() {
+    var cartItemCount = <?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0; ?>;
+    var cartItemCountElement = document.getElementById('cartItemCount');
+    if (cartItemCountElement) {
+        cartItemCountElement.textContent = cartItemCount;
+    }
+}
+
+// Gọi hàm updateCartItemCount() khi trang được tải
+document.addEventListener('DOMContentLoaded', function() {
+    updateCartItemCount();
+});
+</script>

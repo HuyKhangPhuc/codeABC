@@ -47,7 +47,7 @@
                       <p>
                         We will serve you as wholeheartedly and dedicatedly as possible, ensuring that all your needs and requests are met with the utmost care and attention.
                       </p>
-                      <a href="">
+                      <a href="index.php?act=thongke">
                         Contact Us
                       </a>
                     </div>
@@ -72,7 +72,7 @@
                       <p>
                         We are committed to bringing you the highest quality products, ensuring that each item meets the highest standards of excellence and satisfies your expectations completely.
                       </p>
-                      <a href="">
+                      <a href="index.php?act=thongke">
                         Contact Us
                       </a>
                     </div>
@@ -97,7 +97,7 @@
                       <p>
                         We hope you have a wonderful and enjoyable shopping experience, finding everything you need and more to your satisfaction.
                       </p>
-                      <a href="">
+                      <a href="index.php?act=thongke">
                         Contact Us
                       </a>
                     </div>
@@ -142,7 +142,7 @@
       <div class="row">
         <div class="col-sm-6 col-md-4 col-lg-3">
           <div class="box">
-            <a href="">
+            <a href="index.php?act=muahang">
               <div class="img-box">
                 <img src="https://www.tuduylohoi.vn/UploadFiles/Products/Images/T%E1%BA%A9y%20T%E1%BA%BF%20B%C3%A0o%20Ch%E1%BA%BFt%20Smoothing%20Exfoliator/20230802/1_44237ce4-085b-4981-ae69-b1555666de07_559.png" alt="">
               </div>
@@ -167,7 +167,7 @@
         </div>
         <div class="col-sm-6 col-md-4 col-lg-3">
           <div class="box">
-            <a href="">
+            <a href="index.php?act=muahang">
               <div class="img-box">
                 <img src="https://www.tuduylohoi.vn/UploadFiles/Products/Images/X%C3%A0%20ph%C3%B2ng%20n%C6%B0%E1%BB%9Bc%20Aloe%20Liquid%20Soap/20230802/1_d7d28423-3673-4856-8352-2f080096f4ca_636.png" alt="">
               </div>
@@ -192,7 +192,7 @@
         </div>
         <div class="col-sm-6 col-md-4 col-lg-3">
           <div class="box">
-            <a href="">
+            <a href="index.php?act=muahang">
               <div class="img-box">
                 <img src="https://www.tuduylohoi.vn/UploadFiles/Products/Images/Kem%20%C4%91%C3%A1nh%20r%C4%83ng%20Forever%20Bright%C2%AE%20Toothgel/20230815/1_49c06e63-23a7-4dcc-a163-4509aeb03672_028.png" alt="">
               </div>
@@ -217,7 +217,7 @@
         </div>
         <div class="col-sm-6 col-md-4 col-lg-3">
           <div class="box">
-            <a href="">
+            <a href="index.php?act=muahang">
               <div class="img-box">
                 <img src="https://www.tuduylohoi.vn/UploadFiles/Products/Images/N%C6%B0%E1%BB%9Bc%20ch%C4%83m%20s%C3%B3c%20da%20%C4%91a%20c%C3%B4ng%20d%E1%BB%A5ng%20Aloe%20Activator/20210721/1_3186ff36-da1d-4cf3-bc54-2b65d2d1a0bd_1.png" alt="">
               </div>
@@ -242,7 +242,7 @@
         </div>
         <div class="col-sm-6 col-md-4 col-lg-3">
           <div class="box">
-            <a href="">
+            <a href="index.php?act=muahang">
               <div class="img-box">
                 <img src="https://www.tuduylohoi.vn/UploadFiles/Products/Images/Kem%20Ch%E1%BB%91ng%20N%E1%BA%AFng%20Aloe%20Sunscreen/20230803/1_551ffea5-4eda-4958-930a-5b2eed912820_617.png" alt="">
               </div>
@@ -267,7 +267,7 @@
         </div>
         <div class="col-sm-6 col-md-4 col-lg-3">
           <div class="box">
-            <a href="">
+            <a href="index.php?act=muahang">
               <div class="img-box">
                 <img src="https://www.tuduylohoi.vn/UploadFiles/Products/Images/X%C3%A0%20ph%C3%B2ng%20d%C3%A0nh%20cho%20m%E1%BA%B7t%20v%C3%A0%20c%C6%A1%20th%E1%BB%83%20Avocado%20Face%20and%20Body%20Soap/20210721/1_e4e09c59-eeca-4893-8130-15d1d403f425_1.png" alt="">
               </div>
@@ -292,7 +292,7 @@
         </div>
         <div class="col-sm-6 col-md-4 col-lg-3">
           <div class="box">
-            <a href="">
+            <a href="index.php?act=muahang">
               <div class="img-box">
                 <img src="https://www.tuduylohoi.vn/UploadFiles/Products/Images/D%E1%BA%A7u%20d%C6%B0%E1%BB%A1ng%20da%20Forever%20Alpha%20E-Factor/20210721/1_8b55ad4c-c844-4594-8159-9c91e4a0a4ad_1.png" alt="">
               </div>
@@ -317,7 +317,7 @@
         </div>
         <div class="col-sm-6 col-md-4 col-lg-3">
           <div class="box">
-            <a href="">
+            <a href="index.php?act=muahang">
               <div class="img-box">
                 <img src="https://www.tuduylohoi.vn/UploadFiles/Products/Images/Kem%20d%C6%B0%E1%BB%A1ng%20da%20Aloe%20Lotion/20210721/1_5a93fc55-e603-40b0-bfd5-fe4bd81c1e3a_1.png" alt="">
               </div>
@@ -879,6 +879,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
   </script>
   <script src="js/custom.js"></script>
+  
 </body>
 </html>
 

@@ -1,0 +1,1 @@
+<h1>Chúc mừng bạn đã đăng kí thành công</h1>
