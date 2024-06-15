@@ -47,7 +47,7 @@ if (isset($_POST['submit'])) {
 <html>
 <head>
     <meta charset="utf8" />
-    <title>Vietpro Mobile Shop - Đăng nhập hệ thống</title>
+    <title>NOOB TEAM- Đăng nhập hệ thống</title>
     <link rel="stylesheet" type="text/css" href="css/dangnhap.css" />
 </head>
 <body>
