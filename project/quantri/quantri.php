@@ -1,4 +1,4 @@
-<?php
+⁷<?php
     session_start();
     include_once('ketnoi.php');
 ?>
@@ -47,7 +47,7 @@
     <div id="footer">
     	<div id="footer-info">
         	<h4>SHOPP</h4>
-            <p><span>Địa chỉ:</span>.....<span>Phone</span>:0123456</p>
+            <p><span>Địa chỉ:11 Nguyễn Đình Chiểu, Đa Cao, Quận 1, Thành Phố Hồ Chí Minh, Việt Nam</span>.....<span>Phone</span>:0123456</p>
             <p>helo</p>
         </div>
     </div>
