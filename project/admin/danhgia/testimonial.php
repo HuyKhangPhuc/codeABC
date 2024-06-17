@@ -130,34 +130,22 @@
     <div class="info_container ">
       <div class="container">
         <div class="row">
-          <div class="col-md-6 col-lg-3">
-            <div class="info_form ">
-              <h5>
-                Newsletter
-              </h5>
-              <form action="#">
-                <input type="email" placeholder="Enter your email">
-                <button>
-                  Subscribe
-                </button>
-              </form>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
+          <div class="col-md-6 col-lg-8">
             <h6>
               NEED HELP
             </h6>
             <p>
-              For any assistance or support, please do not hesitate to contact us. We are dedicated to addressing your concerns and resolving any issues as quickly as possible to ensure your satisfaction.            </p>
+              For any assistance or support, please do not hesitate to contact us. We are dedicated to addressing your concerns and resolving any issues as quickly as possible to ensure your satisfaction.
+            </p>
           </div>
           <div class="col-md-6 col-lg-3">
             <h6>
               CONTACT US
             </h6>
             <div class="info_link-box">
-              <a href="">
+              <a href="index.php?act=location">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span>11 Nguyễn Đình Chiểu, Đa Kao, Quận 1, Thành phố Hồ Chí Minh, Việt Nam </span>
+                <span> 11 Nguyễn Đình Chiểu, Đa Kao, Quận 1, Thành phố Hồ Chí Minh, Việt Nam </span>
               </a>
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
@@ -172,6 +160,7 @@
         </div>
       </div>
     </div>
+  </section>
     <!-- footer section -->
     <footer class=" footer_section">
       <div class="container">
@@ -197,3 +186,4 @@
 </body>
 
 </html>
+<!-- sua giao dien
