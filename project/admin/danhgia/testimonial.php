@@ -160,19 +160,7 @@
         </div>
       </div>
     </div>
-  </section>
-    <!-- footer section -->
-    <footer class=" footer_section">
-      <div class="container">
-        <p>
-          &copy; <span id="displayYear"></span> All Rights Reserved By
-         khanghuyphuc</a>
-        </p>
-      </div>
-    </footer>
-    <!-- footer section -->
-
-  </section>
+  
 
   <!-- end info section -->
 
