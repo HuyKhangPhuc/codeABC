@@ -1,14 +1,16 @@
 <?php
 include_once('ketnoi.php');
+
 if (isset($_GET['page'])) {
     $page = $_GET['page'];
 } else {
     $page = 1;
 }
+
 $rowsPerPage = 10;
 $perRow = $page * $rowsPerPage - $rowsPerPage;
 
-$sql = "SELECT * FROM sanpham INNER JOIN dmsanpham ON sanpham.id_dm = dmsanpham.id_dm LIMIT ?, ?";
+$sql = "SELECT * FROM sanpham INNER JOIN dmsanpham ON sanpham.`ID-danhmuc` = dmsanpham.`ID-danhmuc` LIMIT ?, ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("ii", $perRow, $rowsPerPage);
 $stmt->execute();

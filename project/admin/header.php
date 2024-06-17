@@ -46,7 +46,7 @@
             </ul>
             <div class="user_option">
                 <?php if(isset($_SESSION['username'])): ?>
-                    <div class="dropdown">
+                    <div style="position:relative;left: 80px;" class="dropdown">
                         <button style="background-color: transparent; color:black;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <?php echo htmlspecialchars($_SESSION['username']); ?>
                         </button>
@@ -72,6 +72,7 @@
                     </button>
                 </form>
             </div>
+            
         </div>
     </nav>
 </header>
@@ -84,6 +85,10 @@
     } else {
          realpath(__DIR__ . '/../sanpham/modal.php');
     }
+   
+
+    
+
 ?>
 
 <!-- Trong phần cuối của trang HTML -->
@@ -95,3 +100,4 @@
 
 </body>
 </html>
+<!-- sửa giao diện-->

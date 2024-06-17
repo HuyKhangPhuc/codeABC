@@ -25,6 +25,12 @@ function addToCart(title, price) {
     saveCart();
 }
 
+// Xóa toàn bộ giỏ hàng và lưu lại
+function clearCart() {
+    cart = [];
+    saveCart();
+}
+
 // Xử lý sự kiện khi nhấn nút "Add to Cart" trong modal
 document.getElementById('addToCartBtn').addEventListener('click', function() {
     var title = document.getElementById('modalTitle').innerText;
@@ -38,3 +44,7 @@ document.getElementById('addToCartBtn').addEventListener('click', function() {
 document.addEventListener('DOMContentLoaded', function() {
     updateCartItemCount();
 });
+document.addEventListener('DOMContentLoaded', function() {
+    updateCartItemCount();
+});
+

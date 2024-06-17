@@ -59,5 +59,15 @@ if (isset($_GET['act'])) {
 
 include "footer.php"; // Include footer at the end
 
+    // Xử lý đăng xuất
+    if (isset($_GET['act']) && $_GET['act'] == 'logout') {
+        // Thực hiện đăng xuất, ví dụ:
+        unset($_SESSION['username']);
+        session_destroy();
+        
+        // Gọi hàm clearCart() để xóa giỏ hàng
+        echo '<script>clearCart();</script>';
+    }
+
 // End of PHP script
 ?>

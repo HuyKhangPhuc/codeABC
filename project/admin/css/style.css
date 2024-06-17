@@ -78,6 +78,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   border-radius: 5px;
+  margin-left: 30px;
 }
 #navbarSupportedContent .nav-item.active .nav-link {
   background-color: #ffffff;
@@ -709,6 +710,10 @@ img#modalImg {
 
 .footer_section a {
   color: #cbc9c9;
+}
+button#dropdownMenuButton {
+  position: relative;
+  left: 250px;
 }
 
 /* end footer section*//*# sourceMappingURL=style.css.map */
