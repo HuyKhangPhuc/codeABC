@@ -48,8 +48,10 @@ if (isset($_GET['act'])) {
             unset($_SESSION['username']); // Unset the session variable
             header("Location: index.php");
             exit; // Always exit after a header redirect
+      
 
-        default:
+        default;
+        
             include "home.php";
             break;
     }

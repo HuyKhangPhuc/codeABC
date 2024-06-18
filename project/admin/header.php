@@ -52,8 +52,9 @@
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="profile.php">Profile</a>
-                            <a class="dropdown-item" href="order_history.php">Order History</a>
+                            <a class="dropdown-item" href="sanpham/order_history.php">Order History</a>
                             <a class="dropdown-item" href="index.php?act=logout">Logout</a>
+                            <a class="dropdown-item" href="sanpham/checkout.php">Checkout</a>
                         </div>
                     </div>
                 <?php else: ?>
@@ -72,24 +73,23 @@
                     </button>
                 </form>
             </div>
-            
         </div>
     </nav>
 </header>
 
-<!-- Include modal -->
-<?php
-    $modalPath = realpath(__DIR__ . '/../sanpham/modal.php');
-    if ($modalPath) {
-        include $modalPath;
-    } else {
-         realpath(__DIR__ . '/../sanpham/modal.php');
-    }
-   
-
-    
-
-?>
+<!-- Giỏ hàng Modal -->
+<div id="cartModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-body">
+            <h2>Your Cart</h2>
+            <ul id="cartItems" class="cart-items">
+                <!-- Danh sách sản phẩm trong giỏ hàng sẽ được thêm vào đây bằng JavaScript -->
+            </ul>
+            <button id="clearCartBtn" class="btn btn-danger">Clear Cart</button>
+        </div>
+    </div>
+</div>
 
 <!-- Trong phần cuối của trang HTML -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -100,4 +100,3 @@
 
 </body>
 </html>
-<!-- sửa giao diện-->

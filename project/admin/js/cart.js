@@ -31,20 +31,38 @@ function clearCart() {
     saveCart();
 }
 
-// Xử lý sự kiện khi nhấn nút "Add to Cart" trong modal
-document.getElementById('addToCartBtn').addEventListener('click', function() {
-    var title = document.getElementById('modalTitle').innerText;
-    var price = document.getElementById('modalPrice').innerText.replace('Price: $', '');
-    addToCart(title, price);
-    alert('Product added to cart!');
-    modal.style.display = "none";
-});
+// Hiển thị giỏ hàng
+function showCart() {
+    var cartItems = document.getElementById('cartItems');
+    cartItems.innerHTML = '';
 
-// Load cart item count when page is loaded
-document.addEventListener('DOMContentLoaded', function() {
+    if (cart.length === 0) {
+        cartItems.innerHTML = '<li>Your cart is empty.</li>';
+    } else {
+        cart.forEach(function(item, index) {
+            var li = document.createElement('li');
+            li.textContent = item.title + ' - $' + item.price + ' (Quantity: ' + item.quantity + ')';
+            cartItems.appendChild(li);
+
+            // Add a remove button for each item
+            var removeBtn = document.createElement('button');
+            removeBtn.textContent = 'Remove';
+            removeBtn.setAttribute('data-index', index); // Store index in data attribute
+            removeBtn.addEventListener('click', function() {
+                removeFromCart(index);
+                showCart(); // Refresh cart display after removing item
+            });
+            li.appendChild(removeBtn);
+        });
+    }
+
+    cartModal.style.display = "block";
+}
+
+// Xóa sản phẩm khỏi giỏ hàng
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    saveCart();
     updateCartItemCount();
-});
-document.addEventListener('DOMContentLoaded', function() {
-    updateCartItemCount();
-});
+}
 

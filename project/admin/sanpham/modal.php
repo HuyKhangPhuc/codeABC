@@ -10,6 +10,9 @@
     </div>
   </div>
 </div>
+<ul id="cartItems"></ul>
+<button onclick="checkout()">Checkout</button>
+
 <script>
   // Giỏ hàng
   var cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -88,4 +91,42 @@
   document.addEventListener('DOMContentLoaded', function() {
     updateCartItemCount();
   });
+  // Giỏ hàng
+var cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+// Lưu giỏ hàng vào localStorage
+function saveCart() {
+  localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartItemCount();
+}
+
+// Thêm sản phẩm vào giỏ hàng
+function addToCart(title, price) {
+  var item = cart.find(product => product.title === title);
+  if (item) {
+    item.quantity++;
+  } else {
+    cart.push({ title: title, price: price, quantity: 1 });
+  }
+  saveCart();
+}
+// Function to add product to cart
+function addToCart(title, price) {
+    var item = cart.find(product => product.title === title);
+    if (item) {
+        item.quantity++;
+    } else {
+        cart.push({ title: title, price: price, quantity: 1 });
+    }
+    saveCart();
+}
+document.getElementById('addToCartBtn').addEventListener('click', function() {
+    var title = document.getElementById('modalTitle').innerText;
+    var price = document.getElementById('modalPrice').innerText.replace('Price: $', '');
+    addToCart(title, price);
+    alert('Product added to cart!');
+    modal.style.display = "none";
+});
+
 </script>
+
